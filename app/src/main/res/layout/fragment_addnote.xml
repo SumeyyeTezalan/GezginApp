@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+
+
+    android:layout_height="match_parent">
+
+    <EditText
+        android:layout_marginTop="30dp"
+        android:id="@+id/note_edittext"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="yeni not giriniz"
+        android:inputType="textPersonName"
+        android:singleLine="false" />
+
+    <Button
+        android:layout_below="@+id/note_edittext"
+        android:layout_marginTop="20dp"
+        android:id="@+id/yeni_note_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="yeni not ekle" />
+
+    <Button
+        android:layout_below="@+id/yeni_note_button"
+        android:layout_marginTop="20dp"
+        android:id="@+id/not_don_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="notlarıma dön" />
+</RelativeLayout>

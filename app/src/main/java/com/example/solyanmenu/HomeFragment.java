@@ -23,6 +23,7 @@ public class HomeFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
        View view=inflater.inflate(R.layout.fragment_home,container,false);
 
+       //home Fragment
        listView=(ListView)view.findViewById(R.id.listview);
        sehirListesi.add(new Sehir(R.drawable.foto1,"Mardin","Güneydoğuda gidilecek güzel bir şehir"));
        sehirListesi.add(new Sehir(R.drawable.foto2,"Adana","Akdenizde gidilecek güzel bir şehir"));
