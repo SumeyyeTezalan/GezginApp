@@ -8,6 +8,8 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -19,7 +21,7 @@ public class ProfilFrament extends Fragment {
 
 
 
-    ImageView profileUserInstagram;
+    ImageView profileUserInstagram,profilDegistirmeImageview;
 
     private OnFragmentInteractionListener mListener;
 
@@ -29,12 +31,24 @@ public class ProfilFrament extends Fragment {
 
         View profileView = inflater.inflate(R.layout.fragment_profile,
                 container,false);
-       profileUserInstagram = (ImageView) profileView.findViewById(R.id.profile_user_instagram);
+        profilDegistirmeImageview=(ImageView)profileView.findViewById(R.id.profil_degistirme_imageview);
+        profileUserInstagram = (ImageView) profileView.findViewById(R.id.profile_user_instagram);
 
         profileUserInstagram.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 openInstagram();
+            }
+        });
+
+        profilDegistirmeImageview.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ChangeProfilFragment fragment=new ChangeProfilFragment();
+                FragmentManager fragmentManager=getFragmentManager();
+                FragmentTransaction fragmentTransaction=fragmentManager.beginTransaction();
+                fragmentTransaction.replace(R.id.content_frame,fragment);
+                fragmentTransaction.commit();
             }
         });
         // Inflate the layout for this fragment
